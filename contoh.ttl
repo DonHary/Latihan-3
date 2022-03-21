@@ -1,0 +1,53 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dosen: <http://ukdw.ac.id/rdf/dosen#> .
+@prefix mhs: <http://ukdw.ac.id/rdf/mahasiswa#> .
+@prefix ict:<http://ti.ukdw.ac.id/ontology/ict_taxonomy#>.
+
+dosen:Dosen rdf:type foaf:Person .
+mhs:Mahasiswa rdf:type foaf:Person .
+
+dosen:budsus rdf:type dosen:Dosen ;
+   	          foaf:name "Budi Susanto" ;
+             foaf:age "60" .
+
+dosen:nila rdf:type dosen:Dosen ;
+           foaf:name "Maria Nila"@id ;
+           foaf:age "30" .
+
+mhs:jessyln rdf:type mhs:Mahasiswa ;
+            foaf:name "Jesslyn Kesuma"@id ;
+            foaf:age "18" .
+
+mhs:Columabanus rdf:type mhs:Mahasiswa ;
+            foaf:name "Columbanus Dian Don Hary"@id ;
+            foaf:age "21" ;
+		foaf:mbox "columbanus.dian@ti.ukdw.ac.id" ;
+		foaf:topic_interest "ict:UIX" .
+
+mhs:Patrik rdf:type mhs:Mahasiswa ;
+            foaf:name "Josephus Patrik"@id ;
+            foaf:age "21" ;
+		foaf:mbox "josephus.patrik@ti.ukdw.ac.id" ;
+		foaf:topic_interest "ict:Java" .
+
+mhs:Milano rdf:type mhs:Mahasiswa ;
+            foaf:name "Milano Noija"@id ;
+            foaf:age "21" ;
+		foaf:mbox "noija.milano@ti.ukdw.ac.id" ;
+		foaf:topic_interest "ict:RPL" .
+
+mhs:Marcel rdf:type mhs:Mahasiswa ;
+            foaf:name "Marcel Belmiro"@id ;
+            foaf:age "21" ;
+		foaf:mbox "belmiro.marcel@ti.ukdw.ac.id" ;
+		foaf:topic_interest "ict:DL" .
+
+
+dosen:budsus foaf:knows dosen:nila .
+dosen:budsus foaf:knows mhs:jessyln .
+mhs:Columbanus foaf:knows mhs:Patrik .
+mhs:Marcel foaf:knows mhs:Milano .
+mhs:Columbanus foaf:knows mhs:Milano .
+mhs:Marcel foaf:knows mhs:Patrik .
+mhs:Columbanus foaf:knows mhs:Marcel .
